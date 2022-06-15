@@ -16,5 +16,11 @@ namespace SE1620_Group3_A2.GUI
         {
             InitializeComponent();
         }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginGUI l = new LoginGUI();
+            l.ShowDialog();
+        }
     }
 }

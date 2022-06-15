@@ -17,7 +17,7 @@ namespace SE1620_Group3_A2
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new GUI.MainGUI());
         }
     }
 }

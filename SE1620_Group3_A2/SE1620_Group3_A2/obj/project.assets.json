@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ki_5_2022,may\\PRN211\\Learn\\SE1620_Group3_A2\\SE1620_Group3_A2\\SE1620_Group3_A2.csproj",
+      "projectUniqueName": "D:\\ki_5_2022,may\\PRN211\\Learn\\SE1620_Group3_A2\\SE1620_Group3_A2\\SE1620_Group3_A2\\SE1620_Group3_A2.csproj",
       "projectName": "SE1620_Group3_A2",
-      "projectPath": "D:\\ki_5_2022,may\\PRN211\\Learn\\SE1620_Group3_A2\\SE1620_Group3_A2\\SE1620_Group3_A2.csproj",
+      "projectPath": "D:\\ki_5_2022,may\\PRN211\\Learn\\SE1620_Group3_A2\\SE1620_Group3_A2\\SE1620_Group3_A2\\SE1620_Group3_A2.csproj",
       "packagesPath": "C:\\Users\\LAPTOP VINH HA\\.nuget\\packages\\",
-      "outputPath": "D:\\ki_5_2022,may\\PRN211\\Learn\\SE1620_Group3_A2\\SE1620_Group3_A2\\obj\\",
+      "outputPath": "D:\\ki_5_2022,may\\PRN211\\Learn\\SE1620_Group3_A2\\SE1620_Group3_A2\\SE1620_Group3_A2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

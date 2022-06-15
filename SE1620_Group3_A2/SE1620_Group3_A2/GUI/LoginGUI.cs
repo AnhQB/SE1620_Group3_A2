@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -28,6 +27,7 @@ namespace SE1620_Group3_A2.GUI
                 .Build();
             name = conf["User:Name"];
             pass = conf["User:Password"];
+
             string namel = txtName.Text;
             string passl = txtPass.Text;
             //if (namel.Equals(name) && passl.Equals(pass))
@@ -39,10 +39,14 @@ namespace SE1620_Group3_A2.GUI
             //    MessageBox.Show("Don't have that user ");
             //}
 
-            MessageBox.Show($"Don't {name} + {namel} + {pass} - {passl}");
+            MessageBox.Show($"Don't {name}: {namel} + {pass}: {passl}");
 
 
+        }
 
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

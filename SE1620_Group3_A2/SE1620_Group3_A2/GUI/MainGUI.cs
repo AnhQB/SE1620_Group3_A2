@@ -35,6 +35,11 @@ namespace SE1620_Group3_A2.GUI
 
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if(Settings.UserName == "")
+            {
+                MessageBox.Show("You need login to show it bru__ !!");
+                return;
+            }
             ShowGUI f = new ShowGUI();
             f.TopLevel = false;
             f.FormBorderStyle = FormBorderStyle.None;

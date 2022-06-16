@@ -18,16 +18,16 @@ namespace SE1620_Group3_A2.DAL
         {
             var conf = new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())
-               .AddJsonFile("appsetting.json", true, true)
+               .AddJsonFile("appsettings.json", true, true)
                .Build();
-
             strConn = conf["ConnectionStrings:DbConnection"];
+
         }
 
         public DataTable GetDataTable(string sql)
         {
 
-            //create object connection
+            //create object conn qection
             SqlConnection conn = new SqlConnection(strConn);
 
             //create object command

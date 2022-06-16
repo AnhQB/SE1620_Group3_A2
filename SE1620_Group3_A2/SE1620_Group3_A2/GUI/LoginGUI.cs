@@ -30,16 +30,18 @@ namespace SE1620_Group3_A2.GUI
 
             string namel = txtName.Text;
             string passl = txtPass.Text;
-            //if (namel.Equals(name) && passl.Equals(pass))
-            //{
-            //    MessageBox.Show("You are logged in as administrator");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Don't have that user ");
-            //}
+            if (namel.Equals(name) && passl.Equals(pass))
+            {
+                MessageBox.Show("You are logged in as administrator");
+                Settings.UserName = name;
+            }
+            else
+            {
+                MessageBox.Show("Don't have that user ");
+            }
 
-            MessageBox.Show($"Don't {name}: {namel} + {pass}: {passl}");
+            //MessageBox.Show($"Don't {name}: {namel} + {pass}: {passl}");
+
 
 
         }

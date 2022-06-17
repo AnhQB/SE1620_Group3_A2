@@ -16,7 +16,7 @@ namespace SE1620_Group3_A2.DAL
         static ShowDAO() => Instance = new ShowDAO();
         public static ShowDAO GetInstance() => Instance;
 
-        public DataTable GetDataTable() => GetDataTable("select * from shows");
+        public DataTable GetDataTable1(string sql) => GetDataTable(sql);
 
     }
 }

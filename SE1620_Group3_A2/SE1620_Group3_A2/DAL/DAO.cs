@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using SE1620_Group3_A2.DTL;
 
 namespace SE1620_Group3_A2.DAL
 {
@@ -22,6 +23,24 @@ namespace SE1620_Group3_A2.DAL
                .Build();
             strConn = conf["ConnectionStrings:DbConnection"];
 
+        }
+
+        public Show GetById(int id)
+        {
+            DataTable dt = GetDataTable("select * from shows where showId = " + id);
+            if (dt.Rows.Count == 0) return null;
+            DataRow row = dt.Rows[0];
+            Show show = new Show
+            {
+                ShowId = (int)row["showId"],
+                RoomId = (int)row["roomId"],
+                FilmId = (int)row["filmId"],
+                ShowDate = (DateTime)row["ShowDate"],
+                Status = (bool)row["status"],
+                Slot = (int)row["slot"],
+                Price = (decimal)row["price"]
+            };
+            return show;
         }
 
         public DataTable GetDataTable(string sql)

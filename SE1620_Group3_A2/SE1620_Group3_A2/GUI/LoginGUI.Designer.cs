@@ -40,7 +40,7 @@ namespace SE1620_Group3_A2.GUI
             // bthLogin
             // 
             this.bthLogin.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.bthLogin.Location = new System.Drawing.Point(76, 224);
+            this.bthLogin.Location = new System.Drawing.Point(58, 166);
             this.bthLogin.Name = "bthLogin";
             this.bthLogin.Size = new System.Drawing.Size(75, 23);
             this.bthLogin.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace SE1620_Group3_A2.GUI
             // Cancel
             // 
             this.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.Cancel.Location = new System.Drawing.Point(247, 224);
+            this.Cancel.Location = new System.Drawing.Point(223, 166);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace SE1620_Group3_A2.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 78);
+            this.label1.Location = new System.Drawing.Point(42, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 2;
@@ -71,7 +71,7 @@ namespace SE1620_Group3_A2.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 143);
+            this.label2.Location = new System.Drawing.Point(42, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 15);
             this.label2.TabIndex = 3;
@@ -79,7 +79,7 @@ namespace SE1620_Group3_A2.GUI
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(160, 140);
+            this.txtPass.Location = new System.Drawing.Point(133, 103);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(202, 23);
@@ -87,7 +87,7 @@ namespace SE1620_Group3_A2.GUI
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(160, 75);
+            this.txtName.Location = new System.Drawing.Point(133, 58);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(202, 23);
             this.txtName.TabIndex = 5;
@@ -96,7 +96,7 @@ namespace SE1620_Group3_A2.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 295);
+            this.ClientSize = new System.Drawing.Size(381, 232);
             this.ControlBox = false;
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPass);

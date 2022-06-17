@@ -38,7 +38,7 @@ namespace SE1620_Group3_A2.DAL
                 ShowDate = (DateTime)row["ShowDate"],
                 Status = (bool)row["status"],
                 Slot = (int)row["slot"],
-                Price = (decimal)row["price"]
+                Price = (double)row["price"]
             };
             return show;
         }

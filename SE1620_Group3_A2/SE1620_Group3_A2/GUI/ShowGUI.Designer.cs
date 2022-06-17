@@ -29,7 +29,7 @@ namespace SE1620_Group3_A2.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddNew = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbNumberShows = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,14 +42,15 @@ namespace SE1620_Group3_A2.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAddNew
             // 
-            this.button1.Location = new System.Drawing.Point(87, 151);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add a new ...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddNew.Location = new System.Drawing.Point(87, 151);
+            this.btnAddNew.Name = "btnAddNew";
+            this.btnAddNew.Size = new System.Drawing.Size(130, 23);
+            this.btnAddNew.TabIndex = 0;
+            this.btnAddNew.Text = "Add a new ...";
+            this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // dataGridView1
             // 
@@ -62,6 +63,7 @@ namespace SE1620_Group3_A2.GUI
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(776, 221);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // lbNumberShows
             // 
@@ -148,7 +150,7 @@ namespace SE1620_Group3_A2.GUI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbNumberShows);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddNew);
             this.Name = "ShowGUI";
             this.Text = "ShowGUI";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -159,7 +161,7 @@ namespace SE1620_Group3_A2.GUI
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lbNumberShows;
         private System.Windows.Forms.Label label1;

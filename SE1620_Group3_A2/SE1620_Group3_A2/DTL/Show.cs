@@ -14,6 +14,6 @@ namespace SE1620_Group3_A2.DTL
         public DateTime ShowDate { get; set; }
         public bool Status { get; set; }
         public int Slot { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
     }
 }

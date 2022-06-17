@@ -18,5 +18,14 @@ namespace SE1620_Group3_A2.DAL
 
         public DataTable GetDataTable1(string sql) => GetDataTable(sql);
 
+        public void AddShow(Show show)
+        {
+            String sql = $"INSERT INTO [dbo].[Shows] ([RoomID],[FilmID],[ShowDate],[Price],[Status],[Slot])" +
+                $" VALUES ({show.RoomId},{show.FilmId},'{show.ShowDate}',{show.Price},0,{show.Slot})";
+            SqlCommand cmd = new SqlCommand(sql);
+
+            Update(cmd);
+        }
+
     }
 }

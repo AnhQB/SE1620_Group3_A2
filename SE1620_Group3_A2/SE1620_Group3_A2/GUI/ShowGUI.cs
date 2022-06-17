@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SE1620_Group3_A2.DAL;
+using SE1620_Group3_A2.DTL;
 
 namespace SE1620_Group3_A2.GUI
 {
@@ -22,12 +23,20 @@ namespace SE1620_Group3_A2.GUI
         {
             
             DataTable dt = ShowDAO.GetInstance().GetDataTable1(sql);
+            DataGridViewButtonColumn STT = new DataGridViewButtonColumn
+            {
+                Name = "STT",
+                Text = "STT",
+            };
+            dataGridView1.Columns.Insert(0, STT);
+
+
             dataGridView1.DataSource = dt;
 
             int rows = dt.Rows.Count;
             lbNumberShows.Text = $"The number of shows:  "+rows;
             int count = dt.Columns.Count;
-            if (Settings.UserName != "")
+            if (Settings.UserName != "") //logined
             {
                 
                 DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn
@@ -54,8 +63,9 @@ namespace SE1620_Group3_A2.GUI
                 dataGridView1.Columns.Insert(count + 1, btnDelete);
                 dataGridView1.Columns.Insert(count + 2, btnBooking);
             }
-            else
+            else // ko login
             {
+                btnAddNew.Visible = false; // hidden button add
                 DataGridViewButtonColumn btnBooking = new DataGridViewButtonColumn
                 {
                     Name = "Booking",
@@ -68,6 +78,7 @@ namespace SE1620_Group3_A2.GUI
             dataGridView1.Columns["showid"].Visible = false;
             dataGridView1.Columns["status"].Visible = false;
 
+            //đổ data(date, film, room) vào để search vs add
             dateChoose.Value = DateTime.Now;
             cbFilm.DataSource = FilmDAO.GetInstance().GetDataTable();
             cbFilm.DisplayMember = "Title";
@@ -85,6 +96,26 @@ namespace SE1620_Group3_A2.GUI
             string roomID = cbRoom.SelectedValue.ToString();
             String sql = "select * from shows where filmID = '"+film+"' and showdate='"+date+"' and roomid="+roomID;
             bindGrid(sql);
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            this.dataGridView1.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            String filmId = cbFilm.SelectedValue.ToString();
+            DateTime date = dateChoose.Value;
+            String roomId = cbRoom.SelectedValue.ToString();
+            Show show = new Show();
+            show.ShowId = -1; //set to understand: add function
+            show.FilmId = Int32.Parse(filmId);
+            show.ShowDate = date;
+            show.RoomId = Int32.Parse(roomId);
+
+            ShowAddEditGUI showAddEdit = new ShowAddEditGUI(show);
+            DialogResult dr = showAddEdit.ShowDialog();
         }
     }
 }

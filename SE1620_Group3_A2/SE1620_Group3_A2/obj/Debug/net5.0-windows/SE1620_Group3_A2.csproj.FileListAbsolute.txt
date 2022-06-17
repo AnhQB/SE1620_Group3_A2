@@ -50,3 +50,4 @@ D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2
 D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\obj\Debug\net5.0-windows\SE1620_Group3_A2.genruntimeconfig.cache
 D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\obj\Debug\net5.0-windows\SE1620_Group3_A2.GUI.ShowGUI.resources
 D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\bin\Debug\net5.0-windows\appsettings.json
+D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\obj\Debug\net5.0-windows\SE1620_Group3_A2.GUI.ShowAddEditGUI.resources

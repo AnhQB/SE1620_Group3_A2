@@ -7,6 +7,9 @@
     <Compile Update="GUI\MainGUI.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\ShowAddEditGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\ShowGUI.cs">
       <SubType>Form</SubType>
     </Compile>

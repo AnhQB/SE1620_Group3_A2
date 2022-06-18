@@ -45,6 +45,7 @@ namespace SE1620_Group3_A2.GUI
             // 
             // cbRoom
             // 
+            this.cbRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRoom.Enabled = false;
             this.cbRoom.FormattingEnabled = true;
             this.cbRoom.Location = new System.Drawing.Point(139, 51);
@@ -54,6 +55,7 @@ namespace SE1620_Group3_A2.GUI
             // 
             // cbSlot
             // 
+            this.cbSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSlot.FormattingEnabled = true;
             this.cbSlot.Location = new System.Drawing.Point(139, 139);
             this.cbSlot.Name = "cbSlot";
@@ -62,6 +64,7 @@ namespace SE1620_Group3_A2.GUI
             // 
             // cbFilm
             // 
+            this.cbFilm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilm.FormattingEnabled = true;
             this.cbFilm.Location = new System.Drawing.Point(139, 181);
             this.cbFilm.Name = "cbFilm";

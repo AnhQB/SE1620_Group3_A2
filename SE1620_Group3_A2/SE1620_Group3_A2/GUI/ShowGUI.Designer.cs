@@ -63,7 +63,7 @@ namespace SE1620_Group3_A2.GUI
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(776, 221);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // lbNumberShows
             // 

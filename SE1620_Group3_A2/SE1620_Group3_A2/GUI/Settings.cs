@@ -9,5 +9,6 @@ namespace SE1620_Group3_A2.GUI
     class Settings
     {
         public static string UserName = "";
+        public static int showid = 0;
     }
 }

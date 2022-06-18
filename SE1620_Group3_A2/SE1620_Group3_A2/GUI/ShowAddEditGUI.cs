@@ -37,40 +37,63 @@ namespace SE1620_Group3_A2.GUI
 
 
                 cbFilm.DataSource = FilmDAO.GetInstance().GetDataTable();
-                cbFilm.DisplayMember = "Name";
+                cbFilm.DisplayMember = "title";
                 cbFilm.ValueMember = "FilmId";
                 cbFilm.SelectedValue = show.FilmId;
+            }
+            else
+            {
+                cbRoom.DataSource = RoomDAO.GetInstance().GetDataTable();
+                cbRoom.DisplayMember = "Name";
+                cbRoom.ValueMember = "RoomId";
+                cbRoom.Enabled = false;
+                cbRoom.SelectedValue = show.RoomId;
+
+                dateChoose.Value = show.ShowDate;
+                dateChoose.Enabled = false;
+
+                cbSlot.DataSource = SlotDAO.GetInstance().GetDataTable();
+                cbSlot.DisplayMember = "slot";
+                cbSlot.ValueMember = "slot";
+                cbSlot.SelectedValue = show.Slot;
 
 
-
+                cbFilm.DataSource = FilmDAO.GetInstance().GetDataTable();
+                cbFilm.DisplayMember = "title";
+                cbFilm.ValueMember = "FilmId";
+                cbFilm.SelectedValue = show.FilmId;
+                 
+                txtPrice.Text = show.Price.ToString();
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            String roomId = cbRoom.SelectedValue.ToString();
+            DateTime date = dateChoose.Value;
+            String slot = cbSlot.SelectedValue.ToString();
+            String filmId = cbFilm.SelectedValue.ToString();
+            decimal price;
+            try
+            {
+                price = decimal.Parse(txtPrice.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Price must be a number");
+                return;
+            }
+            Show show = new Show();
+            show.ShowId = Settings.showid;
+            show.RoomId = Int32.Parse(roomId);
+            show.ShowDate = date;
+            show.Slot = Int32.Parse(slot);
+            show.FilmId = Int32.Parse(filmId);
+            show.Price = price;
+            //MessageBox.Show(show.ToString());
             //add here
             if (add == 1)
             {
-                String roomId = cbRoom.SelectedValue.ToString();
-                DateTime date = dateChoose.Value;
-                String slot = cbSlot.SelectedValue.ToString();
-                String filmId = cbFilm.SelectedValue.ToString();
-                double price;
-                try
-                {
-                    price = double.Parse(txtPrice.Text);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Price must be a number");
-                    return;
-                }
-                Show show = new Show();
-                show.RoomId = Int32.Parse(roomId);
-                show.ShowDate = date;
-                show.Slot = Int32.Parse(slot);
-                show.FilmId = Int32.Parse(filmId);
-                show.Price = price;
 
                 try
                 {
@@ -87,6 +110,17 @@ namespace SE1620_Group3_A2.GUI
                 return;
             }
             //edit here
+            try
+            {
+                ShowDAO.GetInstance().EditShow(show);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can't edit show");
+                return;
+            }
+
+            new ShowGUI();
 
         }
 

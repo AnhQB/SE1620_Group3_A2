@@ -14,6 +14,11 @@ namespace SE1620_Group3_A2.DTL
         public DateTime ShowDate { get; set; }
         public bool Status { get; set; }
         public int Slot { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
+
+        public override string ToString()
+        {
+            return $"showid: {ShowId}, roomID: {RoomId},filmID: {FilmId},showdate: {ShowDate}, status: {Status}, slot: {Slot}, price: {Price}";
+        }
     }
 }

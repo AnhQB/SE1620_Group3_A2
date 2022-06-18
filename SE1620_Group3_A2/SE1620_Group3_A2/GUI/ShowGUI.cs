@@ -17,18 +17,19 @@ namespace SE1620_Group3_A2.GUI
         public ShowGUI()
         {
             InitializeComponent();
+            dataGridView1.Refresh();
             bindGrid("select * from shows order by showdate desc");
         }
         public void bindGrid(string sql)
         {
-            
+
             DataTable dt = ShowDAO.GetInstance().GetDataTable1(sql);
-            DataGridViewButtonColumn STT = new DataGridViewButtonColumn
-            {
-                Name = "STT",
-                Text = "STT",
-            };
-            dataGridView1.Columns.Insert(0, STT);
+            //DataGridViewButtonColumn STT = new DataGridViewButtonColumn
+            //{
+            //    Name = "STT",
+            //    Text = "STT",
+            //};
+            //dataGridView1.Columns.Insert(0, STT);
 
 
             dataGridView1.DataSource = dt;
@@ -98,10 +99,10 @@ namespace SE1620_Group3_A2.GUI
             bindGrid(sql);
         }
 
-        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            this.dataGridView1.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
-        }
+        //private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        //{
+        //    this.dataGridView1.Rows[e.RowIndex].Cells["STT"].Value = (e.RowIndex + 1).ToString();
+        //}
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {
@@ -116,6 +117,37 @@ namespace SE1620_Group3_A2.GUI
 
             ShowAddEditGUI showAddEdit = new ShowAddEditGUI(show);
             DialogResult dr = showAddEdit.ShowDialog();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index)
+            {
+                int showId = (int)dataGridView1.Rows[e.RowIndex].Cells["ShowID"].Value;
+                Settings.showid = showId;
+
+                Show show = ShowDAO.GetInstance().GetById(showId);
+
+                //MessageBox.Show(show.ToString());
+                ShowAddEditGUI showAddEdit = new ShowAddEditGUI(show);
+                DialogResult dr = showAddEdit.ShowDialog();
+            }
+            else if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index)
+            {
+                int showId = (int)dataGridView1.Rows[e.RowIndex].Cells["ShowID"].Value;
+                DialogResult rs = MessageBox.Show("Do you want to delete?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    try
+                    {
+                        ShowDAO.GetInstance().Delete(showId);
+
+                    }catch(Exception ex)
+                    {
+                        MessageBox.Show("Can't delete show haha");
+                    }
+                }
+            }
         }
     }
 }

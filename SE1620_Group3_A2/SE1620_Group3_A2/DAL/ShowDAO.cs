@@ -27,5 +27,20 @@ namespace SE1620_Group3_A2.DAL
             Update(cmd);
         }
 
+        internal void EditShow(Show show)
+        {
+            String sql = $"UPDATE [Shows] SET[RoomID] = {show.RoomId},[FilmID]={show.FilmId} ,[ShowDate] ='{show.ShowDate}' " +
+                $",[Price] ={show.Price} ,[Status] = 0 ,[Slot] = {show.Slot} WHERE showID = {show.ShowId} ";
+
+            SqlCommand cmd = new SqlCommand(sql);
+
+            Update(cmd);
+        }
+
+        internal void Delete(int showId)
+        {
+            SqlCommand cmd2 = new SqlCommand("delete from Shows where ShowID =" + showId);
+            Update(cmd2);
+        }
     }
 }

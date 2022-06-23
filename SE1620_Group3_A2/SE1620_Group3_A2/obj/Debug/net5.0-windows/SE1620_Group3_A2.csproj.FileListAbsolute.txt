@@ -189,3 +189,4 @@ D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2
 D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\bin\Debug\net5.0-windows\System.Diagnostics.DiagnosticSource.dll
 D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\obj\Debug\net5.0-windows\SE1620_Group3_A2.GUI.BookingDetailGUI.resources
 D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\obj\Debug\net5.0-windows\SE1620_Group3_A2.GUI.BookingGUI.resources
+D:\ki_5_2022,may\PRN211\Learn\SE1620_Group3_A2\SE1620_Group3_A2\SE1620_Group3_A2\obj\Debug\net5.0-windows\SE1620_Group3_A2.GUI.BookingAddGUI.resources

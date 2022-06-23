@@ -21,6 +21,14 @@ namespace SE1620_Group3_A2.GUI
             this.context = context;
             this.id = id;
             //MessageBox.Show(panel1.Width + "");
+
+            bindPanel();
+            bindGrid();
+        }
+
+        private void bindPanel()
+        {
+            panel1.Controls.Clear();
             //đổ data vào datagrid
             List<Booking> bookings = context.Bookings
                 .Where(s => s.ShowId == id)
@@ -31,8 +39,8 @@ namespace SE1620_Group3_A2.GUI
 
             //đổ data vào checkbox seat
             bool[] arr = new bool[100];
-            String s = "";
-            foreach(Booking b in bookings)
+            //String s = "";
+            foreach (Booking b in bookings)
             {
                 String seatStatus = b.SeatStatus;
                 //for (var i = 0; i < 100; i++)
@@ -41,17 +49,24 @@ namespace SE1620_Group3_A2.GUI
                 //}
                 for (var i = 0; i < 100; i++)
                 {
-                    if (seatStatus[i] == '1')
+                    if(arr[i] == false)
                     {
-                        arr[i] = true;
-                        continue;
+                        if (seatStatus[i] == '1')
+                        {
+                            arr[i] = true;
+                        }
+                        else
+                        {
+                            arr[i] = false;
+                        }
+
                     }
-                    arr[i] = false;
+
                 }
                 //MessageBox.Show("chuoi: " + s);
             }
 
-            
+
             //int m = 0;
             //int n = 0;
             //int x = panel1.Width / 10 * (m+1);
@@ -79,7 +94,7 @@ namespace SE1620_Group3_A2.GUI
                     c.Checked = arr[index];
                     c.Location = new Point(x, y);
                     c.Size = new Size(20, 20);
-                    if(arr[index] == true)
+                    if (arr[index] == true)
                     {
                         c.Enabled = false;
                     }
@@ -87,9 +102,6 @@ namespace SE1620_Group3_A2.GUI
                     panel1.Controls.Add(c);
                 }
             }
-
-
-            bindGrid();
         }
 
         private void bindGrid()
@@ -119,7 +131,7 @@ namespace SE1620_Group3_A2.GUI
 
             dataGridView1.Columns["Show"].Visible = false;
             dataGridView1.Columns["ShowID"].Visible = false;
-            dataGridView1.Columns["Amount"].Visible = false;
+            dataGridView1.Columns["BookingID"].Visible = false;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -136,7 +148,39 @@ namespace SE1620_Group3_A2.GUI
                 DialogResult dr = detailGUI.ShowDialog();
                 
             }
-            
+            if(e.ColumnIndex == dataGridView1.Columns["Delete"].Index)
+            {
+                DialogResult rs = MessageBox.Show("Do you want to delete?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.No) return;
+                try
+                {
+                    //Show show = ShowDAO.GetInstance().GetById(showId);
+                    Booking booking = context.Bookings.Find(bookingId);
+
+                    context.Bookings.Remove(booking);
+                    context.SaveChanges();
+                    bindPanel();
+                    bindGrid();
+                    MessageBox.Show("That shows is deleted!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+
+        }
+
+        private void btnCreateNewBooking_Click(object sender, EventArgs e)
+        {
+            BookingAddGUI addGUI = new BookingAddGUI(id, context);
+            DialogResult dr = addGUI.ShowDialog();
+            if(dr == DialogResult.OK)
+            {
+                bindPanel();
+                bindGrid();
+            }
         }
     }
 }

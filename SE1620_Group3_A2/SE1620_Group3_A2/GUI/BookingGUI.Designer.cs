@@ -45,6 +45,7 @@ namespace SE1620_Group3_A2.GUI
             this.btnCreateNewBooking.TabIndex = 1;
             this.btnCreateNewBooking.Text = "Create a new booking ..";
             this.btnCreateNewBooking.UseVisualStyleBackColor = true;
+            this.btnCreateNewBooking.Click += new System.EventHandler(this.btnCreateNewBooking_Click);
             // 
             // btnBack
             // 

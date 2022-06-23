@@ -253,6 +253,10 @@ namespace SE1620_Group3_A2.GUI
 
 
             }
+            else
+            {
+                bindGrid(true);
+            }
         }
 
         private void ShowGUI_Load(object sender, EventArgs e)

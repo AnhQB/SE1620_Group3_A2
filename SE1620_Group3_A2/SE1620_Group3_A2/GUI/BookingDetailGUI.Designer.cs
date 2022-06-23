@@ -39,21 +39,21 @@ namespace SE1620_Group3_A2.GUI
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(223, 31);
+            this.panel1.Location = new System.Drawing.Point(141, 31);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 301);
             this.panel1.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(316, 400);
+            this.txtName.Location = new System.Drawing.Point(252, 397);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(180, 23);
             this.txtName.TabIndex = 7;
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(316, 448);
+            this.txtAmount.Location = new System.Drawing.Point(252, 453);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(180, 23);
             this.txtAmount.TabIndex = 8;
@@ -61,7 +61,7 @@ namespace SE1620_Group3_A2.GUI
             // btnBack
             // 
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBack.Location = new System.Drawing.Point(357, 511);
+            this.btnBack.Location = new System.Drawing.Point(252, 515);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 9;
@@ -71,7 +71,7 @@ namespace SE1620_Group3_A2.GUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(250, 403);
+            this.label1.Location = new System.Drawing.Point(141, 400);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 15);
             this.label1.TabIndex = 10;
@@ -80,7 +80,7 @@ namespace SE1620_Group3_A2.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(238, 456);
+            this.label2.Location = new System.Drawing.Point(129, 461);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 11;
@@ -90,7 +90,7 @@ namespace SE1620_Group3_A2.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 576);
+            this.ClientSize = new System.Drawing.Size(593, 576);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

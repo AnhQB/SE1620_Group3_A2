@@ -14,6 +14,7 @@ namespace SE1620_Group3_A2.DAL
         static RoomDAO() => Instance = new RoomDAO();
         public static RoomDAO GetInstance() => Instance;
 
-        public DataTable GetDataTable() => GetDataTable("select * from rooms");
+       // public DataTable GetDataTable() => GetDataTable("select * from rooms");
+        public DataTable GetDataTable1(string sql) => GetDataTable(sql);
     }
 }

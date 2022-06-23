@@ -18,6 +18,38 @@ namespace SE1620_Group3_A2.DAL
 
         public DataTable GetDataTable1(string sql) => GetDataTable(sql);
 
+        public Show GetById(int id)
+        {
+            DataTable dt = GetDataTable("select * from Shows where ShowID = " + id);
+            if (dt.Rows.Count == 0) return null;
+            DataRow row = dt.Rows[0];
+
+                Show show = new Show
+                {
+                    ShowId = row["ShowID"],
+                    RoomId = row["RoomID"],
+                    FilmId = row["FilmID"],
+                    ShowDate = row["ShowDate"],
+                    Status = row["Status"],
+                    Slot = row["Slot"],
+                    Price = row["Price"]
+                    /*
+                    ShowId = (int)row["ShowID"],
+                    RoomId = (int)row["RoomID"],
+                    FilmId = (int)row["FilmID"],
+                    ShowDate = (DateTime)row["ShowDate"],
+                    Status = (bool)row["Status"],
+                    Slot = (int)row["Slot"],
+                    Price = (double)row["Price"]
+                     */
+
+                };
+
+            return show;
+        }
+
+
+
         public void AddShow(Show show)
         {
             String sql = $"INSERT INTO [dbo].[Shows] ([RoomID],[FilmID],[ShowDate],[Price],[Status],[Slot])" +
@@ -26,21 +58,27 @@ namespace SE1620_Group3_A2.DAL
 
             Update(cmd);
         }
-
-        internal void EditShow(Show show)
+        public void Delete(int id)
         {
-            String sql = $"UPDATE [Shows] SET[RoomID] = {show.RoomId},[FilmID]={show.FilmId} ,[ShowDate] ='{show.ShowDate}' " +
-                $",[Price] ={show.Price} ,[Status] = 0 ,[Slot] = {show.Slot} WHERE showID = {show.ShowId} ";
 
-            SqlCommand cmd = new SqlCommand(sql);
+            SqlCommand cmd1 = new SqlCommand("delete from Bookings where ShowID=" + id);
+            Update(cmd1);
 
-            Update(cmd);
-        }
-
-        internal void Delete(int showId)
-        {
-            SqlCommand cmd2 = new SqlCommand("delete from Shows where ShowID =" + showId);
+            SqlCommand cmd2 = new SqlCommand("delete from Shows where ShowID =" + id);
             Update(cmd2);
+
         }
+
+         public void Update(Show show)
+         {
+             String sql = $"Update Shows set FilmID = {show.FilmId}, Price = {show.Price}, Slot = {show.Slot} where ShowID = {show.ShowId}";
+             SqlCommand cmd = new SqlCommand(sql);
+
+             Update(cmd);
+         } 
+
+       
+
+
     }
 }

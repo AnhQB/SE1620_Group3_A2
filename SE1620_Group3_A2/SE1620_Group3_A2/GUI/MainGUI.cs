@@ -53,6 +53,9 @@ namespace SE1620_Group3_A2.GUI
                 loginToolStripMenuItem.Text = $"Logout ({Settings.UserName})";
         }
 
-      
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

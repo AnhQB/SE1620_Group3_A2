@@ -25,24 +25,6 @@ namespace SE1620_Group3_A2.DAL
 
         }
 
-        public Show GetById(int id)
-        {
-            DataTable dt = GetDataTable("select * from shows where showId = " + id);
-            if (dt.Rows.Count == 0) return null;
-            DataRow row = dt.Rows[0];
-            Show show = new Show
-            {
-                ShowId = (int)row["showId"],
-                RoomId = (int)row["roomId"],
-                FilmId = (int)row["filmId"],
-                ShowDate = (DateTime)row["ShowDate"],
-                Status = (bool)row["status"],
-                Slot = (int)row["slot"],
-                Price = (decimal)row["price"]
-            };
-            return show;
-        }
-
         public DataTable GetDataTable(string sql)
         {
 
@@ -70,5 +52,9 @@ namespace SE1620_Group3_A2.DAL
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-    }
+
+        
+}
+
+   
 }

@@ -8,17 +8,20 @@ namespace SE1620_Group3_A2.DTL
 {
     public class Show
     {
-        public int ShowId { get; set; }
+        public dynamic ShowId { get; set; }
+        public dynamic RoomId { get; set; }
+        public dynamic FilmId { get; set; }
+        public dynamic ShowDate { get; set; }
+        public dynamic Status { get; set; }
+        public dynamic Slot { get; set; }
+        public dynamic Price { get; set; }
+        /*
+                 public int ShowId { get; set; }
         public int RoomId { get; set; }
         public int FilmId { get; set; }
         public DateTime ShowDate { get; set; }
         public bool Status { get; set; }
         public int Slot { get; set; }
-        public decimal Price { get; set; }
-
-        public override string ToString()
-        {
-            return $"showid: {ShowId}, roomID: {RoomId},filmID: {FilmId},showdate: {ShowDate}, status: {Status}, slot: {Slot}, price: {Price}";
-        }
+        public double Price { get; set; }*/
     }
 }

@@ -8,10 +8,10 @@ namespace SE1620_Group3_A2.DTL
 {
     class Film
     {
-        public int FilmId { get; set; }
-        public int GenreId { get; set; }
-        public string Title { get; set; }
-        public int Year { get; set; }
-        public string CountryCode { get; set; }
+        public dynamic FilmId { get; set; }
+        public dynamic GenreId { get; set; }
+        public dynamic Title { get; set; }
+        public dynamic Year { get; set; }
+        public dynamic CountryCode { get; set; }
     }
 }

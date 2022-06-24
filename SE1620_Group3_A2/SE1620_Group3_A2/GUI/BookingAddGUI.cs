@@ -94,8 +94,8 @@ namespace SE1620_Group3_A2.GUI
             {
 
                 //update amount
-                amount += 10000;
-                txtAmount.Text = amount.ToString();
+                amount += 10;
+                txtAmount.Text = amount + ".0000";
                 //add index seat to arr
                 this.arrAdd[index] = true;
 
@@ -103,8 +103,8 @@ namespace SE1620_Group3_A2.GUI
             }
             else
             {
-                amount -= 10000;
-                txtAmount.Text = amount.ToString();
+                amount -= 10;
+                txtAmount.Text = amount +".0000";
                 this.arrAdd[index] = false;
             }
 
